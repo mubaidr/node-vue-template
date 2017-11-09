@@ -1,0 +1,27 @@
+# This file is a template, and might need editing before it works on your project.
+# Official framework image. Look for the different tagged releases at:
+# https://hub.docker.com/r/library/node/tags/
+image: node:latest
+
+# This folder is cached between builds
+# http://docs.gitlab.com/ce/ci/yaml/README.html#cache
+cache:
+  paths:
+  - node_modules/
+  - backend/node_modules/
+  - frontend/node_modules/
+
+test:
+  stage: test
+  script:
+    - cd backend && npm install
+    - cd backend && npm test
+
+pack:
+  stage: deploy
+  script:
+    - cd backend && npm install
+    - cd backend && npm pack
+  artifacts:
+    paths:
+    - ./*.tgz
