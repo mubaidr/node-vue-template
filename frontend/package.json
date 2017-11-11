@@ -29,6 +29,7 @@
     "babel-preset-stage-3": "^6.24.1",
     "cross-env": "^5.1.1",
     "css-loader": "^0.28.7",
+    "eslint": "^4.10.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^1.9.0",
@@ -38,14 +39,21 @@
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
     "eslint-plugin-vue": "beta",
-    "eslint": "^4.10.0",
     "file-loader": "^1.1.5",
     "node-sass": "^4.6.0",
+    "pug": "^2.0.0-rc.4",
+    "pug-loader": "^2.3.0",
     "sass-loader": "^6.0.6",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
     "vue-loader": "^13.5.0",
     "vue-template-compiler": "^2.5.3",
-    "webpack-dev-server": "^2.9.4",
-    "webpack": "^3.8.1"
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4"
   },
-  "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"]
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
 }
