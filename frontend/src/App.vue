@@ -1,7 +1,7 @@
 <template>
   <div>
     <header-template></header-template>
-    <router-view></router-view>
+    <!-- <router-view></router-view> -->
     <footer-template></footer-template>
   </div>
 </template>
@@ -19,3 +19,6 @@
   }
 </script>
 
+<style lang="styl">
+
+</style>

@@ -1,5 +1,6 @@
-<template>
-  <div>lol</div>
+<template lang="pug">
+  div
+    p header
 </template>
 
 <script>
@@ -8,6 +9,6 @@
   }
 </script>
 
-<style>
+<style lang="styl">
 
 </style>

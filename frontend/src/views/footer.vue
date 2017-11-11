@@ -9,7 +9,7 @@
   }
 </script>
 
-<style>
+<style lang="styl">
 
 </style>
 

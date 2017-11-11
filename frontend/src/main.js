@@ -8,6 +8,7 @@ import router from './router'
 import './utilities'
 
 new Vue({
+  el: '#app',
   store: store,
   router: router,
   template: '<App/>',
