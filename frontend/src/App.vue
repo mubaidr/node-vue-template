@@ -1,14 +1,13 @@
-<template>
-  <div>
-    <header-template></header-template>
-    <!-- <router-view></router-view> -->
-    <footer-template></footer-template>
-  </div>
+<template lang="pug">
+  div
+    header-template
+    router-view
+    footer-template
 </template>
 
 <script>
-  import header from './views/header'
-  import footer from './views/footer'
+  import header from './views/templates/header'
+  import footer from './views/templates/footer'
 
   export default {
     name: 'app',
