@@ -1,7 +1,7 @@
 {
-  "name": "ors-backend",
-  "description": "Frontend",
-  "version": "0.0.0",
+  "name": "node-vue-template-backend",
+  "description": "Backend for node-vue-template",
+  "version": "0.1.0",
   "author": "Muhammad Ubaid Raza <mubaidr@gmail.com>",
   "license": "MIT",
   "private": true,

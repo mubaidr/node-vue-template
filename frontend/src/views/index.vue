@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    p home
+    h1 node-vue-template
 </template>
 
 <script>
