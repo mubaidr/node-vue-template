@@ -1,5 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
+var extractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: './src/main.js',
@@ -12,11 +13,16 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: ['vue-style-loader', 'css-loader']
+        include: ['/node_modules/'],
+        use: extractTextPlugin.extract({
+          use: ['css-loader']
+        })
       },
       {
         test: /\.styl$/,
-        use: ['vue-style-loader', 'css-loader', 'stylus-loader']
+        use: extractTextPlugin.extract({
+          use: ['css-loader', 'stylus-loader']
+        })
       },
       {
         test: /\.vue$/,
@@ -33,6 +39,10 @@ module.exports = {
         exclude: /node_modules/
       },
       {
+        test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+        loader: 'url-loader'
+      },
+      {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
         options: {
@@ -45,7 +55,8 @@ module.exports = {
     alias: {
       vue$: 'vue/dist/vue.esm.js'
     },
-    extensions: ['*', '.js', '.vue', '.json']
+    extensions: ['*', '.js', '.vue', '.json'],
+    modules: [path.resolve('./src'), path.resolve('./node_modules')]
   },
   devServer: {
     historyApiFallback: true,
@@ -55,7 +66,8 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  devtool: '#eval-source-map',
+  plugins: [new extractTextPlugin('styles.css')]
 }
 
 if (process.env.NODE_ENV === 'production') {

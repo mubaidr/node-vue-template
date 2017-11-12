@@ -1,6 +1,7 @@
 <template lang="pug">
   div
-    p footer
+    p
+      a(href="https://github.com/mubaidr") Follow Me
 </template>
 
 <script>
@@ -9,7 +10,6 @@
   }
 </script>
 
-<style lang="styl">
-
+<style lang="stylus">
 </style>
 
