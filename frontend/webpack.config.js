@@ -13,23 +13,19 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        include: ['/node_modules/'],
-        use: extractTextPlugin.extract({
-          use: ['css-loader']
-        })
+        include: /node_modules/,
+        use: ['style-loader', 'css-loader']
       },
       {
         test: /\.styl$/,
-        use: extractTextPlugin.extract({
-          use: ['css-loader', 'stylus-loader']
-        })
+        use: ['style-loader', 'css-loader', 'stylus-loader']
       },
       {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
           loaders: {
-            styl: ['vue-style-loader', 'css-loader', 'stylus-loader']
+            styl: ['vue-style-loader', 'style-loader', 'css-loader', 'stylus-loader']
           }
         }
       },

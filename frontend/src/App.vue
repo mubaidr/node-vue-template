@@ -1,7 +1,7 @@
 <template lang="pug">
   div
     header-template
-    .container
+    .container.body
       router-view
     footer-template
 </template>

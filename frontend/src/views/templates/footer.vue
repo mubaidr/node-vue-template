@@ -1,7 +1,6 @@
 <template lang="pug">
-  div
-    p
-      a(href="https://github.com/mubaidr") Follow Me
+  div.container
+    p Footer content
 </template>
 
 <script>
