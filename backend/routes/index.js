@@ -1,9 +1,12 @@
-var express = require('express')
-var router = express.Router()
+const express = require('express')
+const router = express.Router()
 
-// route segments
-var login = require('./login')
+// import route segments
+const test = require('./test')
+const auth = require('./auth')
 
-router.use('/login', login)
+// register routes
+router.use('/test', test)
+router.use('/', auth)
 
 module.exports = router

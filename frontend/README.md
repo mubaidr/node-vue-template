@@ -1,6 +1,6 @@
-# ors-frontend
+# frontend
 
-Frontend for the ors-nodejs
+Frontend
 
 ## Build Setup
 

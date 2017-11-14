@@ -1,5 +1,8 @@
-var _db_cfg = require('./db')
+/**
+ * Not so secret options
+ */
+var options = require('./options')
 
 module.exports = {
-  db: _db_cfg
+  options: options
 }

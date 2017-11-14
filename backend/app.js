@@ -1,47 +1,50 @@
-var express = require('express')
-var path = require('path')
-//var favicon = require('serve-favicon')
-var logger = require('morgan')
-var cookieParser = require('cookie-parser')
-var bodyParser = require('body-parser')
-var stylus = require('stylus')
+const express = require('express')
+const logger = require('morgan')
+const bodyParser = require('body-parser')
+const finale = require('finale-rest')
 
-var routes = require('./routes/index')
-var app = express()
+const routes = require('./routes/index')
+const app = express()
+const { models, sequelize } = require('./db/index')
 
-app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'pug')
-app.use(
-  stylus.middleware({
-    src: __dirname + '/public',
-    compress: true
-  })
-)
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'))
+// Setup DB and store models in app
+app.set('db', models)
+
+// some middlewares
+if (app.get('env') === 'development') {
+  app.use(logger('dev'))
+}
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
-app.use(cookieParser())
-app.use(express.static(path.join(__dirname, 'public')))
-
 app.use('/', routes)
 
+// Setup rest api
+finale.initialize({
+  app: app,
+  sequelize: sequelize
+})
+
+Object.keys(models).forEach(model => {
+  finale.resource({
+    model: models[model],
+    endpoints: [`/api/${model}`, `/api/${model}/:id`]
+  })
+})
+
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found')
+app.use((req, res, next) => {
+  let err = new Error('Not Found')
   err.status = 404
   next(err)
 })
 
 // error handler
-app.use(function(err, req, res, next) {
+// eslint-disable-next-line
+app.use((err, req, res, next) => {
   // set locals, only providing error in development
   res.locals.message = err.message
   res.locals.error = req.app.get('env') === 'development' ? err : {}
-
-  // render the error page
-  res.status(err.status || 500)
-  res.render('error')
+  res.send(err.status || 500)
 })
 
 module.exports = app
