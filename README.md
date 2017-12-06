@@ -1,5 +1,7 @@
 # Node-Vue-Template
 
+[![BCH compliance](https://bettercodehub.com/edge/badge/mubaidr/node-vue-template?branch=master)](https://bettercodehub.com/)
+
 A starter template for building complete application using Node.js and Vue.js
 with some included packages and configurations to help start the development
 quickly.
