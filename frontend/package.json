@@ -1,12 +1,13 @@
 {
-  "name": "ors-node",
-  "description": "Frontend for ors-node",
+  "name": "frontend",
+  "description": "Frontend",
   "version": "0.1.0",
   "author": "Muhammad Ubaid Raza <mubaidr@gmail.com>",
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev":
+      "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
     "build": "node build/build.js"
@@ -77,9 +78,5 @@
     "node": ">= 4.0.0",
     "npm": ">= 3.0.0"
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ]
+  "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"]
 }

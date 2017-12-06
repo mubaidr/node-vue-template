@@ -38,7 +38,8 @@ finale.initialize({
   sequelize: sequelize
 })
 
-let skipListModelAPI = ['admin', 'adminRole', 'login']
+// Skip api generation for this list
+let skipListModelAPI = []
 Object.keys(models).forEach(model => {
   if (skipListModelAPI.indexOf(model) === -1) {
     finale.resource({
