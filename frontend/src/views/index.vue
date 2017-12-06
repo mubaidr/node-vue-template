@@ -1,4 +1,4 @@
-<template lang="pug">
+<template lang='pug'>
   .jumbotron
     h1.display-3 node-vue-template
     p
@@ -12,5 +12,5 @@
   export default {}
 </script>
 
-<style lang="stylus">
+<style lang='stylus'>
 </style>

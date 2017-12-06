@@ -1,6 +1,6 @@
-<template lang="pug">
-  div.container
-    p Footer content
+<template lang='pug'>
+  nav.navbar.navbar-expand-lg.navbar-light.bg-light
+    router-link.navbar-brand(to='/home') ORS
 </template>
 
 <script>
@@ -9,6 +9,6 @@
   }
 </script>
 
-<style lang="stylus">
+<style lang='stylus'>
 </style>
 

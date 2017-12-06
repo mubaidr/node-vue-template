@@ -8,21 +8,34 @@
   "parserOptions": {
     "ecmaVersion": 6,
     "ecmaFeatures": {
-      "jsx": true
+      "jsx": true,
+      "experimentalObjectRestSpread": true
     },
     "sourceType": "module"
   },
-  "extends": [
-    "eslint:recommended",
-    "plugin:vue/recommended"
-  ],
+  "extends": ["eslint:recommended", "plugin:vue/recommended"],
   "rules": {
     "no-console": "off",
-    "space-before-function-paren": "error",
+    "space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "never",
+        "named": "always",
+        "asyncArrow": "never"
+      }
+    ],
     "no-extra-semi": "error",
     "no-unused-vars": "warn",
-    "no-multiple-empty-lines": [2, {
-      "max": 1
-    }]
+    "no-multiple-empty-lines": [
+      2,
+      {
+        "max": 1
+      }
+    ]
+  },
+  "globals": {
+    "document": true,
+    "window": true,
+    "swal": true
   }
 }

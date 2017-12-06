@@ -4,5 +4,8 @@
 var options = require('./options')
 
 module.exports = {
-  options: options
+  options: {
+    ...options,
+    iss: 'node-vue-template'
+  }
 }

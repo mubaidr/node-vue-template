@@ -1,10 +1,10 @@
-# frontend
+# ors-frontend
 
-Frontend
+Frontend for the ors-node
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 npm install
 

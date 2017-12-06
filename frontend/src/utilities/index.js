@@ -1,8 +1,8 @@
 import './pollyfills'
-import './axios.js'
+import './axios'
+import './vue-form-generator'
+import './vue-mixins'
+import './flatpickr'
 
-import store from '../store'
-import router from '../router'
-import { sync } from 'vuex-router-sync'
-
-sync(store, router)
+import 'sweetalert'
+import 'cleave.js'

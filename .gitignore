@@ -42,4 +42,4 @@ yarn-error.log
 *.sln
 
 # DB config data
-/backend/config/db.js
+/backend/config/options.js

@@ -22,11 +22,12 @@ const auto = new SequelizeAuto(
     additional: {
       timestamps: enableTimestamps,
       underscored: true,
-      createdAt: 'created_at',
-      updatedAt: 'updated_at',
+      createdAt: 'CREATED_AT',
+      updatedAt: 'UPDATED_AT',
       deletedAt: false
     },
-    logging: false
+    logging: false,
+    camelCase: true
   }
 )
 
@@ -34,7 +35,9 @@ console.log('\nGenerating models in: ' + directory)
 auto.run(err => {
   if (err) throw err
 
-  console.log('\nRemoving redundant models (views, sysdiagrams, aspnet, __MigrationHistory)')
+  console.log(
+    '\nRemoving redundant models (views, sysdiagrams, aspnet, __MigrationHistory)'
+  )
   fs.readdirSync(directory).forEach(file => {
     const t_file = file.toLowerCase()
     if (
@@ -69,9 +72,12 @@ function setupTimestamps (callback) {
       dialect: 'mssql',
       freezeTableName: true,
       operatorsAliases: false,
-      timestamps: true,
+      timestamps: enableTimestamps,
       underscored: true,
-      logging: false
+      benchmark: false,
+      logging: false,
+      typeValidation: true,
+      query: { raw: true }
     }
   )
 
@@ -82,17 +88,16 @@ function setupTimestamps (callback) {
     SET QUOTED_IDENTIFIER OFF;
 
     exec sp_msforeachtable
-
     "
-    IF NOT EXISTS(
+    IF NOT EXISTS (
         SELECT *
         FROM   sys.columns
-        WHERE  object_id = OBJECT_ID(N'?') AND ( name = 'created_at' OR name = 'updated_at' )
+        WHERE  object_id = OBJECT_ID(N'?') AND ( name = 'CREATED_AT' OR name = 'UPDATED_AT' )
     )
     BEGIN
       alter table ? add
-      CREATED_AT datetime not null default getdate(),
-      UPDATED_AT datetime not null default getdate();
+      CREATED_AT datetime2 not null default getdate(),
+      UPDATED_AT datetime2 not null default getdate();
     END
     "
 

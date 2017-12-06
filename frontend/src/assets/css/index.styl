@@ -1,2 +1,94 @@
-.container.body
-  margin-top 50px
+/* Set minimum height for body content */
+.container.body {
+  display: table;
+  min-height: calc(100vh - 177px);
+  padding-bottom: 57px;
+  padding-top: 57px;
+  table-layout: fixed;
+}
+
+/* Verticaly center row */
+.container.body > .row {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/*
+   * Bootstrap 3 deprecated styles used by support vue-form-generator
+*/
+.form-group.error {
+  input, textarea, select {
+    border-color: #d9534f;
+  }
+}
+
+.hint, .help-block {
+  font-size: 0.9em;
+}
+
+.errors {
+  color: #d9534f;
+}
+
+/* Show only first error */
+.errors.help-block > span {
+  display: none;
+}
+
+.errors.help-block > span:first-child {
+  display: block;
+}
+
+/* header */
+@media (max-width: 48em) {
+  .navbar {
+    .navbar-brand {
+      text-align: center;
+      width: 100%;
+    }
+
+    .navbar-nav {
+      text-align: right;
+      width: 100%;
+
+      .nav-link {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+/* sweat alert customization */
+.swal-overlay {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.swal-modal {
+  border-radius: 0;
+}
+
+.swal-button {
+  border-radius: 0;
+}
+
+/* Vue form generator */
+@media (min-width: 48em) {
+  .two-columns .vue-form-generator {
+    .form-group {
+      float: left;
+      width: 48%;
+    }
+
+    .field-submit {
+      margin-right: 2%;
+    }
+
+    .form-group:nth-child(even) {
+      margin-right: 2%;
+    }
+  }
+}
+
+.btn-submit-custom {
+  margin-top: 25px;
+}
