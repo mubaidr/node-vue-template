@@ -1,7 +1,11 @@
 export default {
   state: {
-    loading: false,
-    cache: null
+    loading: false
+  },
+  getters: {
+    isLoading (state) {
+      return state.loading
+    }
   },
   mutations: {
     isLoading (state) {
@@ -9,17 +13,6 @@ export default {
     },
     isNotLoading (state) {
       state.loading = false
-    },
-    setCache (state, c) {
-      state.cache = c
-    }
-  },
-  getters: {
-    isLoading (state) {
-      return state.loading
-    },
-    cache (state) {
-      return state.cache
     }
   }
 }

@@ -5,6 +5,17 @@ export default {
     auth: session.getAuth(),
     user: session.getUser()
   },
+  getters: {
+    isAuthenticated (state) {
+      return state.auth !== null && typeof state.auth !== 'undefined'
+    },
+    auth (state) {
+      return state.auth
+    },
+    user (state) {
+      return state.user
+    }
+  },
   mutations: {
     setAuthentication (state, obj) {
       state.auth = obj.token
@@ -15,17 +26,6 @@ export default {
       session.clear()
       state.auth = null
       state.user = null
-    }
-  },
-  getters: {
-    isAuthenticated (state) {
-      return state.auth !== null && typeof state.auth !== 'undefined'
-    },
-    auth (state) {
-      return state.auth
-    },
-    user (state) {
-      return state.user
     }
   }
 }

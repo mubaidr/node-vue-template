@@ -58,6 +58,7 @@ var router = new vueRouter({
 router.beforeEach((to, from, next) => {
   if (store.getters.isAuthenticated) {
     if (to.path === '/auth/logout') {
+      //TODO: use actions
       store.commit('removeAuthentication')
       next({
         path: '/home'

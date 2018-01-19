@@ -15,12 +15,9 @@
   "dependencies": {
     "axios": "^0.17.1",
     "bootswatch": "^4.0.0-beta.2",
-    "cleave.js": "^1.0.7",
     "es6-promise": "^4.1.1",
-    "flatpickr": "^4.1.4",
     "sweetalert": "^2.0.8",
-    "vue-flatpickr-component": "^5.0.0",
-    "vue-form-generator": "^2.1.1",
+    "vee-validate": "^2.0.3",
     "vue-router": "^3.0.1",
     "vue": "^2.5.9",
     "vuex": "^3.0.1"
