@@ -38,8 +38,6 @@
       },
       $route (to, from) {
         this.setTransition(to, from)
-        // Trigger data fetch from mixins
-        this.getCache()
       }
     },
     computed: {},
