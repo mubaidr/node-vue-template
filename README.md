@@ -15,12 +15,9 @@ Major packages inlcuded and configured (as required)
 
 ### Highlights
 
-* Generate models from exisitng Database
 * Sequelize configures to read models from directory, just add new models and
   sequelize will load it.
-* Automatic API for all the models (you can also skip some)
 * Authentication already setup using JSONWebToken for nodejs
-* Authorization routes to filter api endpoints data based on rules
 * Add custom route endpoints
 
 [Build Setup](./backend/README.md)
@@ -36,11 +33,9 @@ doing minor changes you can easily switch to DB of your choice.
 * Preconfigured axios for jwt authentication
 * Automatic page & ajax progress bars
 * Persistent login & register implemented using vuex & vue-router
-* vue form generator
 * Bootswatch for themes
 * Webpack dev & build server cofigured (with linting)
-* pug & stylus enabled
-* date picker
-* some vue-mixins for eaiser axios requests/posts and form validations
+* stylus enabled
+* some vue-mixins for authentication/user info
 
 [Build Setup](./frontend/README.md)
