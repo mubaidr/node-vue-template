@@ -1,9 +1,9 @@
-<template lang='pug'>
-  h2 Not Found!
+<template>
+  <h2> Contact</h2>
 </template>
 
 <script>
-  export default {}
+export default {}
 </script>
 
 <style lang='stylus'>

@@ -1,5 +1,4 @@
-'use strict'
-require('./check-versions')()
+// require('./check-versions')()
 
 process.env.NODE_ENV = 'production'
 
@@ -16,17 +15,19 @@ spinner.start()
 
 rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
   if (err) throw err
+
+  // eslint-disable-next-line
   webpack(webpackConfig, (err, stats) => {
     spinner.stop()
     if (err) throw err
     process.stdout.write(
-      stats.toString({
+      `${stats.toString({
         colors: true,
         modules: false,
         children: false,
         chunks: false,
         chunkModules: false
-      }) + '\n\n'
+      })}\n\n`
     )
 
     if (stats.hasErrors()) {

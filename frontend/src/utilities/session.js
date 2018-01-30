@@ -3,18 +3,18 @@ export default {
     window.localStorage.setItem('auth', JSON.stringify(obj))
   },
   getAuth () {
-    let auth = JSON.parse(window.localStorage.getItem('auth'))
+    const auth = JSON.parse(window.localStorage.getItem('auth'))
     return auth ? auth.token : null
   },
   getUser () {
-    let auth = JSON.parse(window.localStorage.getItem('auth'))
+    const auth = JSON.parse(window.localStorage.getItem('auth'))
     return auth ? auth.login : null
   },
   clear () {
     window.localStorage.clear()
   },
   getQuotes () {
-    return {
+    const quotes = {
       empty: [
         '“It was not the feeling of completeness I so needed, but the feeling of not being empty.” ― Jonathan Safran Foer, Everything Is Illuminated',
         '“I felt very still and empty, the way the eye of a tornado must feel, moving dully along in the middle of the surrounding hullabaloo.” ― Sylvia Plath, The Bell Jar',
@@ -76,5 +76,7 @@ export default {
         '“I dream my painting and I paint my dream.” ― Vincent Van Gogh'
       ]
     }
+
+    return quotes
   }
 }

@@ -13,32 +13,29 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "~1.18.2",
-    "colors": "^1.1.2",
-    "config": "^1.28.1",
+    "config": "^1.29.2",
     "cors": "^2.8.4",
     "debug": "~3.1.0",
     "express": "~4.16.2",
-    "finale-rest": "^0.1.3",
-    "jsonwebtoken": "^8.1.0",
+    "jsonwebtoken": "^8.1.1",
     "morgan": "~1.9.0",
     "mssql": "^4.1.0",
-    "sequelize-auto": "^0.4.29",
-    "sequelize": "^4.25.1",
-    "tedious": "^2.1.5",
-    "validator": "^9.1.2"
+    "sequelize": "^4.32.2",
+    "tedious": "^2.2.4",
+    "validator": "^9.4.0"
   },
   "devDependencies": {
-    "eslint-config-standard": "^10.2.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^1.9.0",
-    "eslint-plugin-html": "^4.0.1",
+    "eslint-plugin-html": "^4.0.2",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-node": "^5.2.1",
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
-    "eslint": "^4.12.1",
-    "nodemon": "^1.12.1",
-    "prettier-eslint": "^8.2.3"
+    "eslint": "^4.16.0",
+    "nodemon": "^1.14.11"
   },
   "engines": {
     "node": ">= 8.0.0",

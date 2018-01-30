@@ -1,21 +1,35 @@
-<template lang='pug'>
-  nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
-    ul.navbar-nav
-      li.nav-item
-        router-link.navbar-brand(to='/home') ORS
-      li.nav-item
-        router-link.nav-link(to='/home') Home
-    ul.navbar-nav.ml-auto
-      li.nav-item
-        router-link.nav-link(to='/auth/login') Login
-      li.nav-item
-        router-link.nav-link(to='/auth/register') Register
+<template>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <span class="navbar-brand">Frontend</span>
+      </li>
+      <li class="nav-item">
+        <router-link class="nav-link"
+                     to="/home">Home</router-link>
+      </li>
+      <li class="nav-item">
+        <router-link class="nav-link"
+                     to="/about">About</router-link>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <router-link class="nav-link"
+                     to="/auth/login">Login</router-link>
+      </li>
+      <li class="nav-item">
+        <router-link class="nav-link"
+                     to="/auth/register">Register</router-link>
+      </li>
+    </ul>
+  </nav>
 </template>
 
 <script>
-  export default {
-    name: 'header-template-anonymous'
-  }
+export default {
+  name: 'HeaderTemplateAnonymous'
+}
 </script>
 
 <style lang='stylus'>

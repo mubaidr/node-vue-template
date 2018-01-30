@@ -1,60 +1,74 @@
-<template lang='pug'>
-  div
-    transition(name='slide-up' mode='out-in')
-      header-template(v-if='isAuthenticated')
-      header-template-anonymous(v-else)
-    .container.body
-      transition(appear='' :name='transitionName' mode='out-in')
-        router-view
-    footer-template
+<template>
+  <div>
+    <header-template v-if="isAuthenticated" />
+    <header-template-anonymous v-else/>
+    <div class="beta-banner">
+      <div class="alert alert-info">
+        <span class="badge badge-info">Beta</span>&nbsp;
+        <strong>This is a new service &ndash; your feedback will help us to improve it.</strong>
+      </div>
+    </div>
+    <div class="container body">
+      <transition appear="appear"
+                  :name="transitionName"
+                  mode="out-in">
+        <router-view/>
+      </transition>
+    </div>
+    <footer-template/>
+  </div>
 </template>
 
 <script>
-  import headerAnonymous from './views/templates/header-anonymous'
-  import header from './views/templates/header'
-  import footer from './views/templates/footer'
+import headerAnonymous from './views/templates/header-anonymous.vue'
+import header from './views/templates/header.vue'
+import footer from './views/templates/footer.vue'
 
-  export default {
-    name: 'app',
-    data () {
-      return {
-        transitionName: 'slide-up'
-      }
-    },
-    components: {
-      'header-template': header,
-      'header-template-anonymous': headerAnonymous,
-      'footer-template': footer
-    },
-    watch: {
-      isAuthenticated (val) {
-        if (val) {
-          swal('You have successfuly logged in.', 'welcome!', 'success')
-          this.$router.push('/candidate')
+export default {
+  name: 'App',
+  components: {
+    'header-template': header,
+    'header-template-anonymous': headerAnonymous,
+    'footer-template': footer
+  },
+  data() {
+    return {
+      transitionName: 'slide-up'
+    }
+  },
+  watch: {
+    isAuthenticated(val) {
+      if (val) {
+        swal('You have successfuly logged in.', 'welcome!', 'success')
+        if (this.$route.query.redirect) {
+          this.$router.push({
+            path: this.$route.query.redirect
+          })
         } else {
-          swal('You have been logged out.', 'Good bye!', 'info')
           this.$router.push('/home')
         }
-      },
-      $route (to, from) {
-        this.setTransition(to, from)
-        // Trigger data fetch from mixins
-        this.getCache()
+      } else {
+        // swal('You have been logged out.', 'Good bye!', 'info')
+        this.$router.push('/home')
       }
     },
-    computed: {},
-    methods: {
-      setTransition (to, from) {
-        const toDepth = to.path.split('/').length
-        const fromDepth = from.path.split('/').length
-        if (toDepth === fromDepth) {
-          this.transitionName = 'slide-up'
-        } else {
-          this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
-        }
+    $route(to, from) {
+      this.setTransition(to, from)
+    }
+  },
+  created() {},
+  methods: {
+    setTransition(to, from) {
+      const toDepth = to.path.split('/').length
+      const fromDepth = from.path.split('/').length
+      if (toDepth === fromDepth) {
+        this.transitionName = 'slide-up'
+      } else {
+        this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
       }
     }
   }
+}
 </script>
 
 <style lang='stylus'>

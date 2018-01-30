@@ -1,22 +1,11 @@
 const express = require('express')
 const logger = require('morgan')
 const bodyParser = require('body-parser')
-const finale = require('finale-rest')
 const cors = require('cors')
 
 const routes = require('./routes/index')
 const app = express()
 const { models, sequelize } = require('./db/index')
-
-// Console colors
-const colors = require('colors')
-colors.setTheme({
-  success: 'green',
-  debug: 'blue',
-  info: 'cyan',
-  warn: 'yellow',
-  error: 'red'
-})
 
 // Setup DB and store models in app
 app.set('db', models)
@@ -28,26 +17,13 @@ if (app.get('env') === 'development') {
   app.use(logger('dev'))
 }
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(
+  bodyParser.urlencoded({
+    extended: false
+  })
+)
 app.use(cors())
 app.use('/', routes)
-
-// Setup rest api
-finale.initialize({
-  app: app,
-  sequelize: sequelize
-})
-
-// Skip api generation for this list
-let skipListModelAPI = []
-Object.keys(models).forEach(model => {
-  if (skipListModelAPI.indexOf(model) === -1) {
-    finale.resource({
-      model: models[model],
-      endpoints: [`/api/${model}`, `/api/${model}/:id`]
-    })
-  }
-})
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

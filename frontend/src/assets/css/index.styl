@@ -1,94 +1,98 @@
 /* Set minimum height for body content */
 .container.body {
-  display: table;
-  min-height: calc(100vh - 177px);
-  padding-bottom: 57px;
-  padding-top: 57px;
-  table-layout: fixed;
-}
-
-/* Verticaly center row */
-.container.body > .row {
-  display: table-cell;
-  vertical-align: middle;
-}
-
-/*
-   * Bootstrap 3 deprecated styles used by support vue-form-generator
-*/
-.form-group.error {
-  input, textarea, select {
-    border-color: #d9534f;
-  }
-}
-
-.hint, .help-block {
-  font-size: 0.9em;
-}
-
-.errors {
-  color: #d9534f;
-}
-
-/* Show only first error */
-.errors.help-block > span {
-  display: none;
-}
-
-.errors.help-block > span:first-child {
-  display: block;
+  min-height: calc(100vh - 240px)
+  padding-bottom: 1.5rem
+  padding-top: 1.5rem
 }
 
 /* header */
 @media (max-width: 48em) {
   .navbar {
     .navbar-brand {
-      text-align: center;
-      width: 100%;
+      text-align: center
+      width: 100%
     }
 
     .navbar-nav {
-      text-align: right;
-      width: 100%;
+      text-align: right
+      width: 100%
 
       .nav-link {
-        display: inline-block;
+        display: inline-block
       }
     }
   }
 }
 
 /* sweat alert customization */
-.swal-overlay {
-  background-color: rgba(0, 0, 0, 0.75);
+.swal-overlay { /* sweat alert customization */
+  background-color: rgba(0, 0, 0, 0.75)
 }
 
 .swal-modal {
-  border-radius: 0;
+  border-radius: 0
 }
 
 .swal-button {
-  border-radius: 0;
+  border-radius: 0
 }
 
-/* Vue form generator */
-@media (min-width: 48em) {
-  .two-columns .vue-form-generator {
-    .form-group {
-      float: left;
-      width: 48%;
-    }
+/* file input size is large than text inputs */
+.form-control.file {
+  padding: 0.56rem 2rem
+}
 
-    .field-submit {
-      margin-right: 2%;
-    }
+.avatar-picture {
+  margin: 1rem
+  max-height: 10rem
+  width: auto
+}
 
-    .form-group:nth-child(even) {
-      margin-right: 2%;
-    }
+.nav-link.router-link-active {
+  color: rgba(255, 255, 255, 0.25) !important
+}
+
+/* Custom toolbar look using navbar */
+.navbar.toolbar { /* Custom toolbar look using navbar */
+  padding: 0.5rem
+}
+
+/* flatpickr customize */
+.flatpickr-input {
+  display: none !important
+}
+
+/* Validation */
+.invalid-feedback {
+  display: block !important
+  height: 16px
+  visibility: hidden
+}
+
+.invalid.dirty + .invalid-feedback {
+  visibility: visible
+}
+
+/* Bootstrap configure */
+.form-group {
+  margin-bottom: 0.75em
+}
+
+/* flatpickr customization */
+.flatpickr-calendar.inline {
+  border: 1px solid rgba(0, 0, 0, 0.1)
+  box-shadow: none
+  top: 0
+
+  &::before {
+    display: none
+  }
+
+  &::after {
+    display: none
   }
 }
 
-.btn-submit-custom {
-  margin-top: 25px;
+.flatpickr-innerContainer {
+  margin-top: 12px
 }

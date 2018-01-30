@@ -1,80 +1,90 @@
-<template lang='pug'>
-  .row
-    .col-md-6.offset-md-3
-      .card.text-black.bg-light
-        .card-body
-          h2 Login
-          p Please provide username and password to continue.
-          br
-          vue-form-generator(:schema='form.schema' :model='form.model' :options='form.options' @validated="onValidated")
-          router-link.btn-link(to='/auth/recover') Forgot password?
-          | &nbsp;
-          router-link.btn-link(to='/auth/register') Don't have an account?
+<template>
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <div class="card text-black bg-light">
+        <div class="card-body">
+          <form @submit.prevent="submit">
+            <h2>Sign In</h2>
+            <p>Please provide required information to continue.</p>
+
+            <div class="form-group">
+              <label>Username</label>
+              <input class="form-control"
+                     type="text"
+                     autocomplete="username"
+                     placeholder="Username"
+                     name="username"
+                     v-model="form.model.username"
+                     v-validate="'required|min:3|max:16'">
+              <span class="invalid-feedback"
+                    v-show="errors.has('username')"
+                    v-html="errors.first('username')" />
+            </div>
+
+            <div class="form-group">
+              <label>Password</label>
+              <input class="form-control"
+                     type="password"
+                     autocomplete="new-password"
+                     placeholder="Password"
+                     name="password"
+                     v-model="form.model.password"
+                     v-validate="'required|min:6|max:16'">
+              <span class="invalid-feedback"
+                    v-show="errors.has('password')"
+                    v-html="errors.first('password')" />
+            </div>
+
+            <input class="btn btn-primary btn-block"
+                   type="submit"
+                   value="Sign In"
+                   :disabled="errors.any()">
+
+            <br>
+
+            <router-link class="btn-link"
+                         to="/auth/register">
+              Don't have an account?
+            </router-link>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-  export default {
-    data () {
-      return {
-        form: {
-          model: {
-            username: '11111-1111111-1',
-            password: 'minion12345'
-          },
-          schema: {
-            fields: [
-              {
-                type: 'input',
-                inputType: 'email',
-                label: 'Email',
-                model: 'email',
-                placeholder: 'abc@xyz.com',
-                required: true,
-                validator: ['required', 'string', 'email']
-              },
-              {
-                type: 'input',
-                inputType: 'password',
-                autocomplete: true,
-                label: 'Password',
-                model: 'password',
-                placeholder: 'Password',
-                min: 8,
-                max: 16,
-                required: true,
-                validator: ['required', 'string']
-              },
-              {
-                type: 'submit',
-                buttonText: 'Login',
-                validateBeforeSubmit: true,
-                onSubmit: this.onSubmit,
-                disabled: this.disableSubmit,
-                fieldClasses: 'btn btn-primary btn-block'
-              }
-            ]
-          },
-          options: {
-            validateAfterLoad: false,
-            validateAfterChanged: true
-          }
+import { mapActions } from 'vuex'
+
+export default {
+  data() {
+    return {
+      form: {
+        model: {
+          password: 'tim-password',
+          username: 'tim'
         }
       }
-    },
-    methods: {
-      onSubmit () {
-        this.$axios
-          .post()
-          .then(res => {
-            this.$store.commit('setAuthentication', res.data)
-          })
-          .catch(() => {
-            this.form.model.password = ''
-            swal('Invalid credentials!', 'Please try again!', 'error')
-          })
-      }
+    }
+  },
+  methods: {
+    ...mapActions(['login']),
+
+    submit() {
+      this.$validator.validateAll().then(res => {
+        if (res) {
+          this.login(this.form.model)
+        } else {
+          swal(
+            'Not so fast!',
+            'Please provide required data in valid format',
+            'warning'
+          )
+        }
+      })
     }
   }
+}
 </script>
 
 <style lang='stylus'>

@@ -2,13 +2,13 @@ const Sequelize = require('sequelize')
 const config = require('config')
 const fs = require('fs')
 const path = require('path')
-const util = require('./util')
 
 const seeder = require('./seeder')
 const associations = require('./associations')
+
 const directory = path.join(__dirname, '/models/')
 
-var models = {}
+const models = {}
 
 // Setup sequelize
 const sequelize = new Sequelize(
@@ -28,9 +28,9 @@ const sequelize = new Sequelize(
     },
     define: {
       timestamps: true,
-      createdAt: 'CREATED_AT',
-      updatedAt: 'UPDATED_AT',
-      underscored: true,
+      createdAt: 'createdAt',
+      updatedAt: 'updatedAt',
+      underscored: false,
       freezeTableName: true
     },
     typeValidation: true,
@@ -42,7 +42,7 @@ const sequelize = new Sequelize(
 
 // Import models
 fs.readdirSync(directory).forEach(file => {
-  let name = util.getModelName(file)
+  const name = file.replace('.js', '')
   models[name] = sequelize.import(directory + file)
 })
 
@@ -60,18 +60,18 @@ sequelize
       })
       .then(() => {
         seeder.seed(models, () => {
-          console.log('[sequelize] database synced\n'.success)
+          console.log('[sequelize] database synced\n')
         })
       })
       .catch(err => {
-        console.log('\n' + err.message.error + '\n' + err.stack.warn + '\n')
+        console.log(`\n${err.message}\n${err.stack}\n`)
       })
   })
   .catch(err => {
-    console.log('\n' + err.message.error + '\n' + err.stack.warn + '\n')
+    console.log(`\n${err.message}\n${err.stack}\n`)
   })
 
 module.exports = {
-  models: models,
-  sequelize: sequelize
+  models,
+  sequelize
 }

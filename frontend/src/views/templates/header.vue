@@ -1,50 +1,65 @@
-<template lang='pug'>
-  nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
-    ul.navbar-nav
-      li.nav-item
-        router-link.navbar-brand(to='/home') ORS
-      li.nav-item
-        router-link.nav-link(to='/home') Home
-      li.nav-item
-        router-link.nav-link(to='/candidate') Profile
-    ul.navbar-nav.ml-auto
-      li.nav-item
-        router-link.nav-link(to='/account') My Account
-      li.nav-item
-        span.nav-link.custom-link(@click='logout') Logout
+<template>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <span class="navbar-brand">Frontend</span>
+      </li>
+      <li class="nav-item">
+        <router-link class="nav-link"
+                     to="/home">Home</router-link>
+      </li>
+      <li class="nav-item">
+        <router-link class="nav-link"
+                     to="/about">About</router-link>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <router-link class="nav-link"
+                     to="/account">My Account</router-link>
+      </li>
+      <li class="nav-item">
+        <span class="nav-link custom-link"
+              @click="confirmLogout">Logout</span>
+      </li>
+    </ul>
+  </nav>
 </template>
 
 <script>
-  export default {
-    name: 'header-template',
-    methods: {
-      logout () {
-        swal({
-          title: 'Are you sure you want to logout?',
-          text: '',
-          icon: 'warning',
-          buttons: {
-            cancel: {
-              text: 'Cancel',
-              visible: true
-            },
-            confirm: {
-              text: 'Yes'
-            }
+import { mapActions } from 'vuex'
+
+export default {
+  name: 'HeaderTemplate',
+  methods: {
+    ...mapActions(['logout']),
+    confirmLogout() {
+      swal({
+        title: 'Are you sure you want to logout?',
+        text: '',
+        icon: 'warning',
+        buttons: {
+          cancel: {
+            text: 'Cancel',
+            visible: true
           },
-          dangerMode: true
-        }).then(confirm => {
-          if (confirm) {
-            this.$router.push('/auth/logout')
+          confirm: {
+            text: 'Yes'
           }
-        })
-      }
+        },
+        dangerMode: true
+      }).then(confirm => {
+        if (confirm) {
+          this.logout()
+        }
+      })
     }
   }
+}
 </script>
 
 <style lang='stylus'>
-  .custom-link {
-    cursor: pointer;
-  }
+.custom-link {
+  cursor: pointer
+}
 </style>
