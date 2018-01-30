@@ -1,9 +1,7 @@
 {
   "env": {
     "browser": true,
-    "commonjs": true,
-    "es6": true,
-    "node": true
+    "es6": true
   },
   "parserOptions": {
     "ecmaVersion": 6,
@@ -13,25 +11,11 @@
     },
     "sourceType": "module"
   },
-  "extends": ["eslint:recommended", "plugin:vue/recommended"],
+  "plugins": ["vue"],
+  "extends": ["airbnb", "plugin:vue/recommended", "prettier"],
   "rules": {
-    "no-console": "off",
-    "space-before-function-paren": [
-      "error",
-      {
-        "anonymous": "never",
-        "named": "always",
-        "asyncArrow": "never"
-      }
-    ],
-    "no-extra-semi": "error",
-    "no-unused-vars": "warn",
-    "no-multiple-empty-lines": [
-      2,
-      {
-        "max": 1
-      }
-    ]
+    "vue/max-attributes-per-line": 0,
+    "no-console": "off"
   },
   "globals": {
     "document": true,

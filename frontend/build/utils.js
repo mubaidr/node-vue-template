@@ -1,10 +1,10 @@
-'use strict'
 const path = require('path')
 const config = require('../config')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const packageConfig = require('../package.json')
+const nodeNotifier = require('node-notifier')
 
-exports.assetsPath = function(_path) {
+exports.assetsPath = _path => {
   const assetsSubDirectory =
     process.env.NODE_ENV === 'production'
       ? config.build.assetsSubDirectory
@@ -13,8 +13,8 @@ exports.assetsPath = function(_path) {
   return path.posix.join(assetsSubDirectory, _path)
 }
 
-exports.cssLoaders = function(options) {
-  options = options || {}
+exports.cssLoaders = opt => {
+  const options = opt || {}
 
   const cssLoader = {
     loader: 'css-loader',
@@ -31,14 +31,14 @@ exports.cssLoaders = function(options) {
   }
 
   // generate loader string to be used with extract text plugin
-  function generateLoaders(loader, loaderOptions) {
+  function generateLoaders (loader, loaderOptions) {
     const loaders = options.usePostCSS
       ? [cssLoader, postcssLoader]
       : [cssLoader]
 
     if (loader) {
       loaders.push({
-        loader: loader + '-loader',
+        loader: `${loader}-loader`,
         options: Object.assign({}, loaderOptions, {
           sourceMap: options.sourceMap
         })
@@ -52,9 +52,8 @@ exports.cssLoaders = function(options) {
         use: loaders,
         fallback: 'vue-style-loader'
       })
-    } else {
-      return ['vue-style-loader'].concat(loaders)
     }
+    return ['vue-style-loader'].concat(loaders)
   }
 
   // https://vue-loader.vuejs.org/en/configurations/extract-css.html
@@ -70,35 +69,28 @@ exports.cssLoaders = function(options) {
 }
 
 // Generate loaders for standalone style files (outside of .vue)
-exports.styleLoaders = function(options) {
+exports.styleLoaders = options => {
   const output = []
   const loaders = exports.cssLoaders(options)
 
-  for (const extension in loaders) {
+  Object.keys(loaders).forEach(extension => {
     const loader = loaders[extension]
-    output.push({
-      test: new RegExp('\\.' + extension + '$'),
-      use: loader
-    })
-  }
+    output.push({ test: new RegExp(`\\.${extension}$`), use: loader })
+  })
 
   return output
 }
 
-exports.createNotifierCallback = () => {
-  const notifier = require('node-notifier')
+exports.createNotifierCallback = () => (severity, errors) => {
+  if (severity !== 'error') return
 
-  return (severity, errors) => {
-    if (severity !== 'error') return
+  const error = errors[0]
+  const filename = error.file && error.file.split('!').pop()
 
-    const error = errors[0]
-    const filename = error.file && error.file.split('!').pop()
-
-    notifier.notify({
-      title: packageConfig.name,
-      message: severity + ': ' + error.name,
-      subtitle: filename || '',
-      icon: path.join(__dirname, 'logo.png')
-    })
-  }
+  nodeNotifier.notify({
+    title: packageConfig.name,
+    message: `${severity}: ${error.name}`,
+    subtitle: filename || '',
+    icon: path.join(__dirname, 'logo.png')
+  })
 }

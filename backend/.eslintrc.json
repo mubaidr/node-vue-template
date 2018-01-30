@@ -1,29 +1,19 @@
 {
   "env": {
-    "browser": true,
-    "commonjs": true,
     "es6": true,
     "node": true
   },
   "parserOptions": {
-    "ecmaVersion": 6,
+    "ecmaVersion": 8,
     "ecmaFeatures": {
       "jsx": true,
       "experimentalObjectRestSpread": true
     },
     "sourceType": "module"
   },
-  "extends": ["eslint:recommended"],
+  "extends": ["airbnb", "prettier"],
   "rules": {
-    "no-console": "off",
-    "space-before-function-paren": "error",
-    "no-extra-semi": "error",
-    "no-unused-vars": "warn",
-    "no-multiple-empty-lines": [
-      2,
-      {
-        "max": 1
-      }
-    ]
+    "linebreak-style": "off",
+    "no-console": "off"
   }
 }

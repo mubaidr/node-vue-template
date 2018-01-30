@@ -1,31 +1,9 @@
 import Vue from 'vue'
+import { mapGetters } from 'vuex'
 
-var mixin = {
-  data () {
-    return {
-      _isValid: true
-    }
-  },
-  methods: {
-    // Generic form properties
-    onValidated (validity) {
-      this._isValid = validity
-    }
-  },
+const mixin = {
   computed: {
-    disableSubmit () {
-      return !this._isValid || this.$store.getters.isLoading
-    },
-    isAuthenticated () {
-      return this.$store.getters.isAuthenticated
-    },
-    // Generic properties
-    isLoading () {
-      return this.$store.getters.isLoading
-    },
-    user () {
-      return this.$store.getters.user
-    }
+    ...mapGetters(['isLoading', 'isAuthenticated', 'user'])
   }
 }
 

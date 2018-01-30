@@ -1,27 +1,25 @@
-<template lang='pug'>
-  .row
-    .col-md-6.offset-md-3
-      h2 Account
-      br
-      p Update your email address.
-      email-view
-      br
-      hr
-      br
-      p Set a new password for your account.
-      password-view
+<template>
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <h2>Account</h2>
+      <p>You can update your username or change password.</p>
+      <username-view/>
+      <hr>
+      <password-view/>
+    </div>
+  </div>
 </template>
 
 <script>
-  import passwordView from './password'
-  import emailView from './email'
+import passwordView from './password.vue'
+import usernameView from './username.vue'
 
-  export default {
-    components: {
-      'password-view': passwordView,
-      'email-view': emailView
-    }
+export default {
+  components: {
+    'password-view': passwordView,
+    'username-view': usernameView
   }
+}
 </script>
 
 <style lang='stylus'>

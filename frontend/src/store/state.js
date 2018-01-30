@@ -1,18 +1,24 @@
+/* eslint-disable no-param-reassign */
+import session from '../utilities/session'
+
 export default {
   state: {
-    loading: false
+    loading: false,
+    quotes: session.getQuotes(),
+    quote: null
   },
   getters: {
-    isLoading (state) {
+    isLoading(state) {
       return state.loading
     }
   },
   mutations: {
-    isLoading (state) {
+    isLoading(state) {
       state.loading = true
     },
-    isNotLoading (state) {
+    isNotLoading(state) {
       state.loading = false
     }
-  }
+  },
+  actions: {}
 }
