@@ -1,6 +1,6 @@
 # Node-Vue-Template
 
-[![BCH compliance](https://bettercodehub.com/edge/badge/mubaidr/node-vue-template?branch=master)](https://bettercodehub.com/)
+[![codebeat badge](https://codebeat.co/badges/ae01fa78-b892-403c-9020-875e7607cd7b)](https://codebeat.co/projects/github-com-mubaidr-node-vue-template-master)
 
 A starter template for building complete application using Node.js and Vue.js
 with some included packages and configurations to help start the development
