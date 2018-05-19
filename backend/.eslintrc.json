@@ -11,7 +11,8 @@
     },
     "sourceType": "module"
   },
-  "extends": ["airbnb", "prettier"],
+  "plugins": ["node"],
+  "extends": ["airbnb", "plugin:node/recommended", "prettier"],
   "rules": {
     "linebreak-style": "off",
     "no-console": "off"
