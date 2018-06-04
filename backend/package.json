@@ -12,7 +12,7 @@
     "mssql": "^4.1.0",
     "sequelize": "^4.37.7",
     "tedious": "^2.6.1",
-    "validator": "^10.2.0"
+    "validator": "^10.3.0"
   },
   "description": "Backend for node-vue-template",
   "devDependencies": {
