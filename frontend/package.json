@@ -5,7 +5,7 @@
     "axios": "^0.18.0",
     "bootswatch": "^4.1.1",
     "es6-promise": "^4.2.4",
-    "flatpickr": "^4.5.0",
+    "flatpickr": "^4.5.1",
     "sweetalert": "^2.1.0",
     "vee-validate": "^2.0.9",
     "vue": "^2.5.16",
