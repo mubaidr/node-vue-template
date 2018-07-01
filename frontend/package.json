@@ -24,7 +24,7 @@
     "babel-preset-stage-2": "^6.24.1",
     "chalk": "^2.4.1",
     "compression-webpack-plugin": "^1.1.11",
-    "copy-webpack-plugin": "^4.5.1",
+    "copy-webpack-plugin": "^4.5.2",
     "css-loader": "^0.28.11",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-prettier": "^2.9.0",
