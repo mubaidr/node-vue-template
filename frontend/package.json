@@ -15,7 +15,7 @@
   },
   "description": "frontend",
   "devDependencies": {
-    "autoprefixer": "^8.6.4",
+    "autoprefixer": "^9.1.3",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.6",
     "babel-loader": "^7.1.5",
