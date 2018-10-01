@@ -414,7 +414,7 @@ crypto-random-string@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/crypto-random-string/-/crypto-random-string-1.0.0.tgz#a230f64f568310e1498009940790ec99545bca7e"
 
-debug@2.6.9, debug@^2.1.2, debug@^2.2.0, debug@^2.3.3, debug@^2.6.3, debug@^2.6.8, debug@^2.6.9:
+debug@2.6.9, debug@^2.1.2, debug@^2.2.0, debug@^2.3.3, debug@^2.6.8, debug@^2.6.9:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
   dependencies:
@@ -914,7 +914,7 @@ gauge@~2.7.3:
     strip-ansi "^3.0.1"
     wide-align "^1.1.0"
 
-generic-pool@^3.1.7, generic-pool@^3.4.0:
+generic-pool@^3.4.0, generic-pool@^3.4.2:
   version "3.4.2"
   resolved "https://registry.yarnpkg.com/generic-pool/-/generic-pool-3.4.2.tgz#92ff7196520d670839a67308092a12aadf2f6a59"
 
@@ -1579,13 +1579,13 @@ ms@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.1.tgz#30a5864eb3ebb0a66f2ebe6d727af06a09d86e0a"
 
-mssql@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/mssql/-/mssql-4.1.0.tgz#5a70e24d751c28bcb9f23acf709c1bdaccc8eae6"
+mssql@^4.2.1:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/mssql/-/mssql-4.2.1.tgz#c7133247e912d71185b09d3c2bae0f19345fcde6"
   dependencies:
-    debug "^2.6.3"
-    generic-pool "^3.1.7"
-    tedious "^2.0.0"
+    debug "^3.1.0"
+    generic-pool "^3.4.2"
+    tedious "^2.6.4"
 
 nan@^2.9.2:
   version "2.10.0"
@@ -2393,7 +2393,7 @@ tar@^4:
     safe-buffer "^5.1.2"
     yallist "^3.0.2"
 
-tedious@^2.0.0, tedious@^2.6.4:
+tedious@^2.6.4:
   version "2.6.4"
   resolved "https://registry.yarnpkg.com/tedious/-/tedious-2.6.4.tgz#b3dee882458fbed8e7c8778156344f049dda3f38"
   dependencies:
