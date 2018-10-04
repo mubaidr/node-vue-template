@@ -2692,7 +2692,7 @@ find-up@^3.0.0:
   dependencies:
     locate-path "^3.0.0"
 
-flatpickr@^4.4.6, flatpickr@^4.5.2:
+flatpickr@^4.5.1, flatpickr@^4.5.2:
   version "4.5.2"
   resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.5.2.tgz#47c8ad472a096e5fb7e74b809b0703535383f20d"
 
@@ -6019,11 +6019,11 @@ vue-eslint-parser@^2.0.3:
     esquery "^1.0.0"
     lodash "^4.17.4"
 
-vue-flatpickr-component@^7.0.4:
-  version "7.0.4"
-  resolved "https://registry.yarnpkg.com/vue-flatpickr-component/-/vue-flatpickr-component-7.0.4.tgz#29909596555f5160792a917f469f9e809e5e6c26"
+vue-flatpickr-component@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/vue-flatpickr-component/-/vue-flatpickr-component-8.0.0.tgz#d5ce18981ad1c6fdf32106ae441f5160978e46b3"
   dependencies:
-    flatpickr "^4.4.6"
+    flatpickr "^4.5.1"
 
 vue-hot-reload-api@^2.3.0:
   version "2.3.0"
