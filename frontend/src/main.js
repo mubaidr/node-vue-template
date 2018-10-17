@@ -8,9 +8,12 @@ import './utilities/pace-config'
 import './assets/js/pace.min'
 import './utilities'
 
+import VeeValidate from 'vee-validate'
 import App from './App.vue'
 import store from './store'
 import router from './router'
+
+Vue.use(VeeValidate)
 
 // eslint-disable-next-line
 new Vue({
@@ -18,7 +21,7 @@ new Vue({
   store,
   router,
   components: {
-    App
+    App,
   },
-  template: '<App/>'
+  template: '<App/>',
 })

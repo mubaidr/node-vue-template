@@ -2,22 +2,25 @@
   <form @submit.prevent="submit">
     <div class="form-group">
       <label>Username</label>
-      <input class="form-control"
-             type="text"
-             autocomplete="username"
-             placeholder="Username"
-             name="username"
-             v-model="form.model.username"
-             v-validate="'required|min:3|max:16'">
-      <span class="invalid-feedback"
-            v-show="errors.has('username')"
-            v-html="errors.first('username')" />
+      <input
+        v-validate="'required|min:3|max:16'"
+        v-model="form.model.username"
+        class="form-control"
+        type="text"
+        autocomplete="username"
+        placeholder="Username"
+        name="username">
+      <span
+        v-show="errors.has('username')"
+        class="invalid-feedback"
+        v-html="errors.first('username')" />
     </div>
 
-    <input class="btn btn-primary btn-block"
-           type="submit"
-           value="Change Username"
-           :disabled="errors.any()">
+    <input
+      :disabled="errors.any()"
+      class="btn btn-primary btn-block"
+      type="submit"
+      value="Change Username">
   </form>
 </template>
 
@@ -29,9 +32,9 @@ export default {
     return {
       form: {
         model: {
-          username: ''
-        }
-      }
+          username: '',
+        },
+      },
     }
   },
   created() {
@@ -41,8 +44,8 @@ export default {
     ...mapActions(['updateLogin']),
     onSubmit() {
       this.updateLogin()
-    }
-  }
+    },
+  },
 }
 </script>
 

@@ -1,4 +1,5 @@
 const express = require('express')
+
 const router = express.Router({ caseSensitive: true })
 const bcrypt = require('bcryptjs')
 const validator = require('validator')
@@ -8,7 +9,7 @@ router.post('/', (req, res, next) => {
     req.body.token || req.query.token || req.headers['x-access-token']
   const db = req.app.get('db')
   let { email, password } = req.body
-  let user = req.account
+  const user = req.account
   let updateOptions
 
   if (email && validator.isEmail(email)) {
@@ -37,7 +38,7 @@ router.post('/', (req, res, next) => {
       }
     })
     .then(() => {
-      //return updated user details
+      // return updated user details
       user.email = email
       user.isConfirmed = false
 

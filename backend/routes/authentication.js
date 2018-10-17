@@ -1,4 +1,5 @@
 const express = require('express')
+
 const router = express.Router({ caseSensitive: true })
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
@@ -7,7 +8,7 @@ const validator = require('validator')
 
 router.post('/auth/register', (req, res, next) => {
   const db = req.app.get('db')
-  let newUser = db.login.build(req.body)
+  const newUser = db.login.build(req.body)
 
   if (
     !newUser.email ||
@@ -48,8 +49,8 @@ router.post('/auth/register', (req, res, next) => {
 router.post('/auth/login', (req, res, next) => {
   const db = req.app.get('db')
 
-  let email = req.body.email
-  let password = req.body.password
+  const email = req.body.email
+  const password = req.body.password
 
   if (
     !email ||
@@ -67,7 +68,7 @@ router.post('/auth/login', (req, res, next) => {
   db.login
     .findOne({
       where: {
-        email: email
+        email
       }
     })
     .then(user => {
@@ -87,7 +88,7 @@ router.post('/auth/login', (req, res, next) => {
         user = user.get({ plain: true })
         delete user.password
 
-        //signin
+        // signin
         jwt.sign(
           {
             iss: config.get('options.iss') || 'iss-not-specified',
@@ -95,7 +96,7 @@ router.post('/auth/login', (req, res, next) => {
             data: user
           },
           config.get('options.secret'),
-          function (err, token) {
+          (err, token) => {
             if (err) next(err)
 
             res.json({
@@ -110,7 +111,7 @@ router.post('/auth/login', (req, res, next) => {
 })
 
 router.use('/api/*', (req, res, next) => {
-  let token = req.body.token || req.query.token || req.headers['x-access-token']
+  const token = req.body.token || req.query.token || req.headers['x-access-token']
 
   if (token) {
     jwt.verify(token, config.get('options.secret'), (err, payload) => {

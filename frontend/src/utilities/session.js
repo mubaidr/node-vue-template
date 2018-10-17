@@ -1,19 +1,19 @@
 export default {
-  setAuthentication (obj) {
+  setAuthentication(obj) {
     window.localStorage.setItem('auth', JSON.stringify(obj))
   },
-  getAuth () {
+  getAuth() {
     const auth = JSON.parse(window.localStorage.getItem('auth'))
     return auth ? auth.token : null
   },
-  getUser () {
+  getUser() {
     const auth = JSON.parse(window.localStorage.getItem('auth'))
     return auth ? auth.login : null
   },
-  clear () {
+  clear() {
     window.localStorage.clear()
   },
-  getQuotes () {
+  getQuotes() {
     const quotes = {
       empty: [
         '“It was not the feeling of completeness I so needed, but the feeling of not being empty.” ― Jonathan Safran Foer, Everything Is Illuminated',
@@ -25,7 +25,7 @@ export default {
         '“Emptiness which is conceptually liable to be mistaken for sheer nothingness is in fact the reservoir of infinite possibilities.” ― D.T. Suzuki',
         '“Nothing has an unlikely quality. It is heavy.” ― Jeanette Winterson, Weight: The Myth of Atlas and Heracles',
         '“I decided I would fill the emptiness in me with God and with paint.” ― Kimberly Novosel',
-        '“His own opinion, which he does not air, is that the origin of speech lie in song, and the origins of song in the need to fill out with sound the overlarge and rather empty human soul.” ― J.M. Coetzee, Disgrace'
+        '“His own opinion, which he does not air, is that the origin of speech lie in song, and the origins of song in the need to fill out with sound the overlarge and rather empty human soul.” ― J.M. Coetzee, Disgrace',
       ],
       try: [
         '“Do not fear failure but rather fear not trying.” ― Roy T. Bennett, The Light in the Heart',
@@ -37,7 +37,7 @@ export default {
         '“Trying is always enough.” ― Patricia Briggs, Dragon Bones',
         '“... be radical about grace and relentless about truth and resolute about holiness...” ― Ann Voskamp',
         "“There's doubt in trying. Just do it or stop thinking.” ― Toba Beta, Master of Stupidity",
-        '“Never stop dreaming, never stop believing, never give up, never stop trying, and never stop learning.” ― Roy Bennett'
+        '“Never stop dreaming, never stop believing, never give up, never stop trying, and never stop learning.” ― Roy Bennett',
       ],
       fail: [
         "“I have not failed. I've just found 10, 000 ways that won't work.” ― Thomas A. Edison",
@@ -49,7 +49,7 @@ export default {
         '“My fault, my failure, is not in the passions I have, but in my lack of control of them.” ― Jack Kerouac',
         '“It is hard to fail, but it is worse never to have tried to succeed.”― Theodore Roosevelt',
         '“All of old. Nothing else ever. Ever tried. Ever failed. No matter. Try again. Fail again. Fail better.” ― Samuel Beckett, Worstward Ho',
-        "“Success is most often achieved by those who don't know that failure is inevitable.” ― Coco Chanel, Believing in Ourselves: The Wisdom of Women"
+        "“Success is most often achieved by those who don't know that failure is inevitable.” ― Coco Chanel, Believing in Ourselves: The Wisdom of Women",
       ],
       success: [
         "“I can't give you a sure-fire formula for success, but I can give you a formula for failure: try to please everybody all the time.” ― Herbert Bayard Swope",
@@ -61,7 +61,7 @@ export default {
         "“I'm a success today because I had a friend who believed in me and I didn't have the heart to let him down.” ― Abraham Lincoln",
         '“Sometimes it takes a good fall to really know where you stand”― Hayley Williams',
         '“The way to get started is to quit talking and begin doing. ” ― Walt Disney Company',
-        '“All you need in this life is ignorance and confidence; then success is sure. ” ― Mark Twain'
+        '“All you need in this life is ignorance and confidence; then success is sure. ” ― Mark Twain',
       ],
       inspire: [
         '“Do one thing every day that scares you.” ― Eleanor Roosevelt',
@@ -73,10 +73,10 @@ export default {
         '“I was never really insane except upon occasions when my heart was touched.” ― Edgar Allan Poe',
         "“It's not the load that breaks you down, it's the way you carry it.” ― Lou Holtz",
         '“The things you do for yourself are gone when you are gone, but the things you do for others remain as your legacy.” ― Kalu Ndukwe Kalu',
-        '“I dream my painting and I paint my dream.” ― Vincent Van Gogh'
-      ]
+        '“I dream my painting and I paint my dream.” ― Vincent Van Gogh',
+      ],
     }
 
     return quotes
-  }
+  },
 }

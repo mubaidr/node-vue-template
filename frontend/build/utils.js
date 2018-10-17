@@ -1,8 +1,7 @@
 const path = require('path')
-const config = require('../config')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const packageConfig = require('../package.json')
 const nodeNotifier = require('node-notifier')
+const config = require('../config')
+const packageConfig = require('../package.json')
 
 exports.assetsPath = _path => {
   const assetsSubDirectory =
@@ -19,19 +18,19 @@ exports.cssLoaders = opt => {
   const cssLoader = {
     loader: 'css-loader',
     options: {
-      sourceMap: options.sourceMap
-    }
+      sourceMap: options.sourceMap,
+    },
   }
 
   const postcssLoader = {
     loader: 'postcss-loader',
     options: {
-      sourceMap: options.sourceMap
-    }
+      sourceMap: options.sourceMap,
+    },
   }
 
   // generate loader string to be used with extract text plugin
-  function generateLoaders (loader, loaderOptions) {
+  function generateLoaders(loader, loaderOptions) {
     const loaders = options.usePostCSS
       ? [cssLoader, postcssLoader]
       : [cssLoader]
@@ -40,18 +39,15 @@ exports.cssLoaders = opt => {
       loaders.push({
         loader: `${loader}-loader`,
         options: Object.assign({}, loaderOptions, {
-          sourceMap: options.sourceMap
-        })
+          sourceMap: options.sourceMap,
+        }),
       })
     }
 
     // Extract CSS when that option is specified
     // (which is the case during production build)
     if (options.extract) {
-      return ExtractTextPlugin.extract({
-        use: loaders,
-        fallback: 'vue-style-loader'
-      })
+      // TODO: add css extract plugin
     }
     return ['vue-style-loader'].concat(loaders)
   }
@@ -64,7 +60,7 @@ exports.cssLoaders = opt => {
     sass: generateLoaders('sass', { indentedSyntax: true }),
     scss: generateLoaders('sass'),
     stylus: generateLoaders('stylus'),
-    styl: generateLoaders('stylus')
+    styl: generateLoaders('stylus'),
   }
 }
 
@@ -91,6 +87,6 @@ exports.createNotifierCallback = () => (severity, errors) => {
     title: packageConfig.name,
     message: `${severity}: ${error.name}`,
     subtitle: filename || '',
-    icon: path.join(__dirname, 'logo.png')
+    icon: path.join(__dirname, 'logo.png'),
   })
 }

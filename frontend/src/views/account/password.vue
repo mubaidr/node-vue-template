@@ -2,36 +2,41 @@
   <div>
     <div class="form-group">
       <label>Password</label>
-      <input class="form-control"
-             type="password"
-             autocomplete="new-password"
-             placeholder="Password"
-             name="password"
-             v-model="form.model.password"
-             v-validate="'required|min:6|max:16'">
-      <span class="invalid-feedback"
-            v-show="errors.has('password')"
-            v-html="errors.first('password')" />
+      <input
+        v-validate="'required|min:6|max:16'"
+        v-model="form.model.password"
+        class="form-control"
+        type="password"
+        autocomplete="new-password"
+        placeholder="Password"
+        name="password">
+      <span
+        v-show="errors.has('password')"
+        class="invalid-feedback"
+        v-html="errors.first('password')" />
     </div>
 
     <div class="form-group">
       <label>Confirm Password</label>
-      <input class="form-control"
-             type="password"
-             autocomplete="new-password"
-             placeholder="Confirm Password"
-             name="confirmPassword"
-             v-model="form.model.confirmPassword"
-             v-validate="'confirmed'">
-      <span class="invalid-feedback"
-            v-show="errors.has('confirmPassword')"
-            v-html="errors.first('confirmPassword')" />
+      <input
+        v-validate="'confirmed'"
+        v-model="form.model.confirmPassword"
+        class="form-control"
+        type="password"
+        autocomplete="new-password"
+        placeholder="Confirm Password"
+        name="confirmPassword">
+      <span
+        v-show="errors.has('confirmPassword')"
+        class="invalid-feedback"
+        v-html="errors.first('confirmPassword')" />
     </div>
 
-    <input class="btn btn-primary btn-block"
-           type="submit"
-           value="Change Password"
-           :disabled="errors.any()">
+    <input
+      :disabled="errors.any()"
+      class="btn btn-primary btn-block"
+      type="submit"
+      value="Change Password">
 
     <br>
   </div>
@@ -46,17 +51,17 @@ export default {
       form: {
         model: {
           password: '',
-          confirmPassword: ''
-        }
-      }
+          confirmPassword: '',
+        },
+      },
     }
   },
   methods: {
     ...mapActions(['updateLogin']),
     onSubmit() {
       this.updateLogin()
-    }
-  }
+    },
+  },
 }
 </script>
 

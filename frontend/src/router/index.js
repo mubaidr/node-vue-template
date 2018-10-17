@@ -22,67 +22,67 @@ const router = new VueRouter({
   routes: [
     {
       path: '/',
-      redirect: '/home'
+      redirect: '/home',
     },
     {
       path: '/home',
       component: index,
       meta: {
-        isOpen: true
-      }
+        isOpen: true,
+      },
     },
     {
       path: '/about',
       component: about,
       meta: {
-        isOpen: true
-      }
+        isOpen: true,
+      },
     },
     {
       path: '/contact',
       component: contact,
       meta: {
-        isOpen: true
-      }
+        isOpen: true,
+      },
     },
     {
       path: '/feedback',
       component: feedback,
       meta: {
-        isOpen: true
-      }
+        isOpen: true,
+      },
     },
     {
       path: '/auth/register',
       component: register,
       meta: {
         skipIfAuthorized: true,
-        isOpen: true
-      }
+        isOpen: true,
+      },
     },
     {
       path: '/auth/login',
       component: login,
       meta: {
         skipIfAuthorized: true,
-        isOpen: true
-      }
+        isOpen: true,
+      },
     },
     {
-      path: '/auth/logout'
+      path: '/auth/logout',
     },
     {
       path: '/account',
-      component: account
+      component: account,
     },
     {
       path: '*',
       component: notFound,
       meta: {
-        isOpen: true
-      }
-    }
-  ]
+        isOpen: true,
+      },
+    },
+  ],
 })
 
 router.beforeEach((to, from, next) => {
@@ -91,7 +91,7 @@ router.beforeEach((to, from, next) => {
       store.dispatch('logout')
     } else if (to.matched.some(record => record.meta.skipIfAuthorized)) {
       next({
-        path: '/home'
+        path: '/home',
       })
     } else {
       next()
@@ -102,8 +102,8 @@ router.beforeEach((to, from, next) => {
     next({
       path: '/auth/login',
       query: {
-        redirect: to.fullPath
-      }
+        redirect: to.fullPath,
+      },
     })
   }
 })

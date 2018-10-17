@@ -9,9 +9,10 @@
       </div>
     </div>
     <div class="container body">
-      <transition appear="appear"
-                  :name="transitionName"
-                  mode="out-in">
+      <transition 
+        :name="transitionName"
+        appear="appear"
+        mode="out-in">
         <router-view/>
       </transition>
     </div>

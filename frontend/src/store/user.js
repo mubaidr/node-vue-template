@@ -7,7 +7,7 @@ import router from '../router'
 export default {
   state: {
     auth: session.getAuth(),
-    user: session.getUser()
+    user: session.getUser(),
   },
   getters: {
     isAuthenticated(state) {
@@ -18,7 +18,7 @@ export default {
     },
     user(state) {
       return state.user
-    }
+    },
   },
   mutations: {
     setAuthentication(state, obj) {
@@ -31,7 +31,7 @@ export default {
         state.user = null
         session.clear()
       }
-    }
+    },
   },
   actions: {
     logout(context) {
@@ -68,6 +68,6 @@ export default {
         .catch(() => {
           swal('Invalid data!', 'Please try again!', 'error')
         })
-    }
-  }
+    },
+  },
 }

@@ -17,8 +17,8 @@ import usernameView from './username.vue'
 export default {
   components: {
     'password-view': passwordView,
-    'username-view': usernameView
-  }
+    'username-view': usernameView,
+  },
 }
 </script>
 

@@ -1,20 +1,15 @@
 {
   "env": {
-    "es6": true,
     "node": true
   },
+  "extends": ["airbnb", "plugin:node/recommended", "prettier"],
   "parserOptions": {
     "ecmaVersion": 8,
-    "ecmaFeatures": {
-      "jsx": true,
-      "experimentalObjectRestSpread": true
-    },
     "sourceType": "module"
   },
-  "plugins": ["node"],
-  "extends": ["airbnb", "plugin:node/recommended", "prettier"],
   "rules": {
     "linebreak-style": "off",
-    "no-console": "off"
+    "no-console": "off",
+    "no-underscore-dangle": "off"
   }
 }

@@ -9,67 +9,77 @@
 
             <div class="form-group">
               <label>Username</label>
-              <input class="form-control"
-                     type="text"
-                     autocomplete="username"
-                     placeholder="Username"
-                     name="username"
-                     v-model="form.model.username"
-                     v-validate="'required|min:3|max:16'">
-              <span class="invalid-feedback"
-                    v-show="errors.has('username')"
-                    v-html="errors.first('username')" />
+              <input
+                v-validate="'required|min:3|max:16'"
+                v-model="form.model.username"
+                class="form-control"
+                type="text"
+                autocomplete="username"
+                placeholder="Username"
+                name="username">
+              <span
+                v-show="errors.has('username')"
+                class="invalid-feedback"
+                v-html="errors.first('username')" />
             </div>
 
             <div class="form-group">
               <label>Name</label>
-              <input class="form-control"
-                     type="text"
-                     placeholder="Name"
-                     name="name"
-                     v-model="form.model.name">
-              <span class="invalid-feedback"
-                    v-show="errors.has('name')"
-                    v-html="errors.first('name')" />
+              <input
+                v-model="form.model.name"
+                class="form-control"
+                type="text"
+                placeholder="Name"
+                name="name">
+              <span
+                v-show="errors.has('name')"
+                class="invalid-feedback"
+                v-html="errors.first('name')" />
             </div>
 
             <div class="form-group">
               <label>Password</label>
-              <input class="form-control"
-                     type="password"
-                     autocomplete="new-password"
-                     placeholder="Password"
-                     name="password"
-                     v-model="form.model.password"
-                     v-validate="'required|min:6|max:16'">
-              <span class="invalid-feedback"
-                    v-show="errors.has('password')"
-                    v-html="errors.first('password')" />
+              <input
+                v-validate="'required|min:6|max:16'"
+                v-model="form.model.password"
+                class="form-control"
+                type="password"
+                autocomplete="new-password"
+                placeholder="Password"
+                name="password">
+              <span
+                v-show="errors.has('password')"
+                class="invalid-feedback"
+                v-html="errors.first('password')" />
             </div>
 
             <div class="form-group">
               <label>Confirm Password</label>
-              <input class="form-control"
-                     type="password"
-                     autocomplete="new-password"
-                     placeholder="Confirm Password"
-                     name="confirmPassword"
-                     v-model="form.model.confirmPassword"
-                     v-validate="'confirmed'">
-              <span class="invalid-feedback"
-                    v-show="errors.has('confirmPassword')"
-                    v-html="errors.first('confirmPassword')" />
+              <input
+                v-validate="'confirmed'"
+                v-model="form.model.confirmPassword"
+                class="form-control"
+                type="password"
+                autocomplete="new-password"
+                placeholder="Confirm Password"
+                name="confirmPassword">
+              <span
+                v-show="errors.has('confirmPassword')"
+                class="invalid-feedback"
+                v-html="errors.first('confirmPassword')" />
             </div>
 
-            <input class="btn btn-primary btn-block"
-                   type="submit"
-                   value="Register"
-                   :disabled="errors.any()">
+            <input
+              :disabled="errors.any()"
+              class="btn btn-primary btn-block"
+              type="submit"
+              value="Register">
 
             <br>
 
-            <router-link class="btn-link"
-                         to="/auth/login">
+            <router-link
+              class="btn-link"
+              to="/auth/login">
               Already have an account?
             </router-link>
           </form>
@@ -90,9 +100,9 @@ export default {
           password: 'tim-password',
           confirmPassword: 'tim-password',
           username: 'tim',
-          name: 'Minion Tim'
-        }
-      }
+          name: 'Minion Tim',
+        },
+      },
     }
   },
   methods: {
@@ -106,12 +116,12 @@ export default {
           swal(
             'Not so fast!',
             'Please provide required data in valid format',
-            'warning'
+            'warning',
           )
         }
       })
-    }
-  }
+    },
+  },
 }
 </script>
 

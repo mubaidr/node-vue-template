@@ -5,12 +5,12 @@ export default {
   state: {
     loading: false,
     quotes: session.getQuotes(),
-    quote: null
+    quote: null,
   },
   getters: {
     isLoading(state) {
       return state.loading
-    }
+    },
   },
   mutations: {
     isLoading(state) {
@@ -18,7 +18,7 @@ export default {
     },
     isNotLoading(state) {
       state.loading = false
-    }
+    },
   },
-  actions: {}
+  actions: {},
 }

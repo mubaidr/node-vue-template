@@ -5,27 +5,30 @@
     "body-parser": "~1.18.3",
     "config": "^2.0.1",
     "cors": "^2.8.4",
-    "debug": "~3.1.0",
-    "express": "~4.16.3",
+    "debug": "~4.1.0",
+    "express": "~4.16.4",
     "jsonwebtoken": "^8.3.0",
     "morgan": "~1.9.1",
     "mssql": "^4.2.1",
-    "sequelize": "^4.39.0",
+    "sequelize": "^4.39.1",
     "tedious": "^2.6.4",
     "validator": "^10.8.0"
   },
   "description": "Backend for node-vue-template",
   "devDependencies": {
+    "eslint": "^5.7.0",
     "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-config-standard": "^11.0.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-config-standard": "^12.0.0",
     "eslint-friendly-formatter": "^4.0.1",
     "eslint-loader": "^2.1.1",
     "eslint-plugin-html": "^4.0.6",
     "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-node": "^7.0.1",
-    "eslint-plugin-promise": "^3.7.0",
-    "eslint-plugin-standard": "^3.1.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-standard": "^4.0.0",
     "nodemon": "^1.18.4"
   },
   "engines": {
@@ -38,6 +41,7 @@
   "scripts": {
     "dev": "nodemon ./bin/www --config nodemon.json",
     "generate-models": "node ./db/generate-models",
+    "lint": "eslint --fix ./",
     "start": "node ./bin/www"
   },
   "version": "0.1.0"

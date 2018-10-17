@@ -5,22 +5,26 @@
         <span class="navbar-brand">Frontend</span>
       </li>
       <li class="nav-item">
-        <router-link class="nav-link"
-                     to="/home">Home</router-link>
+        <router-link
+          class="nav-link"
+          to="/home">Home</router-link>
       </li>
       <li class="nav-item">
-        <router-link class="nav-link"
-                     to="/about">About</router-link>
+        <router-link
+          class="nav-link"
+          to="/about">About</router-link>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <router-link class="nav-link"
-                     to="/account">My Account</router-link>
+        <router-link
+          class="nav-link"
+          to="/account">My Account</router-link>
       </li>
       <li class="nav-item">
-        <span class="nav-link custom-link"
-              @click="confirmLogout">Logout</span>
+        <span
+          class="nav-link custom-link"
+          @click="confirmLogout">Logout</span>
       </li>
     </ul>
   </nav>
@@ -41,25 +45,25 @@ export default {
         buttons: {
           cancel: {
             text: 'Cancel',
-            visible: true
+            visible: true,
           },
           confirm: {
-            text: 'Yes'
-          }
+            text: 'Yes',
+          },
         },
-        dangerMode: true
+        dangerMode: true,
       }).then(confirm => {
         if (confirm) {
           this.logout()
         }
       })
-    }
-  }
+    },
+  },
 }
 </script>
 
 <style lang='stylus'>
 .custom-link {
-  cursor: pointer
+  cursor: pointer;
 }
 </style>

@@ -7,7 +7,7 @@ import router from '../router'
 
 let numberOfAjaxCallPending = 0
 
-function checkLoadingState (state) {
+function checkLoadingState(state) {
   if (state) {
     numberOfAjaxCallPending += 1
     store.commit('isLoading')
@@ -32,7 +32,7 @@ axios.interceptors.request.use(
   err => {
     checkLoadingState(false)
     return Promise.reject(err)
-  }
+  },
 )
 
 // Add a response interceptor
@@ -49,12 +49,12 @@ axios.interceptors.response.use(
       router.push({
         path: '/auth/login',
         query: {
-          redirect: router.app._route.fullPath
-        }
+          redirect: router.app._route.fullPath,
+        },
       })
     }
     return Promise.reject(err)
-  }
+  },
 )
 
 export default axios
