@@ -537,6 +537,12 @@ debug@^3.1.0:
   dependencies:
     ms "2.0.0"
 
+debug@^3.2.6:
+  version "3.2.6"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-3.2.6.tgz#e83d17de16d8a7efb7717edbe5fb10135eee629b"
+  dependencies:
+    ms "^2.1.1"
+
 debug@^4.0.1, debug@~4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.1.0.tgz#373687bffa678b38b1cd91f861b63850035ddc87"
@@ -1984,13 +1990,13 @@ ms@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.1.tgz#30a5864eb3ebb0a66f2ebe6d727af06a09d86e0a"
 
-mssql@^4.2.1:
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/mssql/-/mssql-4.2.1.tgz#c7133247e912d71185b09d3c2bae0f19345fcde6"
+mssql@^4.2.2:
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/mssql/-/mssql-4.2.2.tgz#98378427de9faf422430bad03c7919fb894ec490"
   dependencies:
-    debug "^3.1.0"
+    debug "^3.2.6"
     generic-pool "^3.4.2"
-    tedious "^2.6.4"
+    tedious "^2.7.1"
 
 mute-stream@0.0.7:
   version "0.0.7"
@@ -2889,6 +2895,20 @@ tar@^4:
 tedious@^2.6.4:
   version "2.6.4"
   resolved "https://registry.yarnpkg.com/tedious/-/tedious-2.6.4.tgz#b3dee882458fbed8e7c8778156344f049dda3f38"
+  dependencies:
+    babel-runtime "^6.26.0"
+    big-number "0.3.1"
+    bl "^1.2.2"
+    depd "^1.1.2"
+    iconv-lite "^0.4.23"
+    native-duplexpair "^1.0.0"
+    punycode "^2.1.0"
+    readable-stream "^2.3.6"
+    sprintf-js "^1.1.1"
+
+tedious@^2.7.1:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/tedious/-/tedious-2.7.1.tgz#5308edebdd33767ca67b36fc71b2ab9c54675278"
   dependencies:
     babel-runtime "^6.26.0"
     big-number "0.3.1"
