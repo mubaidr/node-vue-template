@@ -9,7 +9,7 @@
     "express": "~4.16.4",
     "jsonwebtoken": "^8.3.0",
     "morgan": "~1.9.1",
-    "mssql": "^4.2.1",
+    "mssql": "^4.2.2",
     "sequelize": "^4.41.0",
     "tedious": "^2.6.4",
     "validator": "^10.8.0"
