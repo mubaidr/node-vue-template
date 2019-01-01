@@ -10,7 +10,7 @@
     "jsonwebtoken": "^8.4.0",
     "morgan": "~1.9.1",
     "mssql": "^4.2.3",
-    "sequelize": "^4.41.2",
+    "sequelize": "^4.42.0",
     "tedious": "^3.0.1",
     "validator": "^10.9.0"
   },
