@@ -1189,9 +1189,9 @@ gauge@~2.7.3:
     strip-ansi "^3.0.1"
     wide-align "^1.1.0"
 
-generic-pool@^3.4.0, generic-pool@^3.4.2:
-  version "3.4.2"
-  resolved "https://registry.yarnpkg.com/generic-pool/-/generic-pool-3.4.2.tgz#92ff7196520d670839a67308092a12aadf2f6a59"
+generic-pool@^3.4.0, generic-pool@^3.6:
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/generic-pool/-/generic-pool-3.6.1.tgz#a51a8439ee86f0bbcf100fc1db3f45c86289deb4"
 
 get-stdin@^6.0.0:
   version "6.0.0"
@@ -1947,12 +1947,12 @@ ms@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.1.tgz#30a5864eb3ebb0a66f2ebe6d727af06a09d86e0a"
 
-mssql@^4.2.3:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/mssql/-/mssql-4.3.0.tgz#1ff6d1392a3332236fefd66b48c3d44e9630ff80"
+mssql@^4.3.2:
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/mssql/-/mssql-4.3.2.tgz#2bebfe84ce30caefbf9a43e38ef6c7c9bfa53360"
   dependencies:
     debug "^3.2.6"
-    generic-pool "^3.4.2"
+    generic-pool "^3.6"
     tedious "^2.7.1"
 
 mute-stream@0.0.7:
