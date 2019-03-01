@@ -1021,9 +1021,9 @@ boolbase@^1.0.0, boolbase@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
 
-bootswatch@^4.2.1:
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/bootswatch/-/bootswatch-4.2.1.tgz#be402aeb8f9920c008c62f8a77c29a91a11b4c8a"
+bootswatch@^4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/bootswatch/-/bootswatch-4.3.1.tgz#be54748b420a1962dbcf9782605aac092f842e38"
 
 brace-expansion@^1.1.7:
   version "1.1.11"
