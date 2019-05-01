@@ -6199,9 +6199,9 @@ vary@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
 
-vee-validate@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/vee-validate/-/vee-validate-2.2.0.tgz#0dcb6251a50cde9a3a1e924c917cc3d0a543b661"
+vee-validate@^2.2.5:
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/vee-validate/-/vee-validate-2.2.5.tgz#b2951c210b8b712766db436bea67b555decbbea2"
 
 vendors@^1.0.0:
   version "1.0.2"
