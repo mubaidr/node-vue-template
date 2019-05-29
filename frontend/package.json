@@ -15,7 +15,8 @@
     "vue": "^2.6.10",
     "vue-flatpickr-component": "^8.1.2",
     "vue-router": "^3.0.6",
-    "vuex": "^3.1.0"
+    "vuex": "^3.1.0",
+    "snyk": "^1.168.0"
   },
   "description": "frontend",
   "devDependencies": {
@@ -74,7 +75,10 @@
     "build": "node build/build.js",
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js --mode development",
     "lint": "eslint --ext .js,.vue --fix src",
-    "start": "npm run dev"
+    "start": "npm run dev",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "snyk": true
 }
