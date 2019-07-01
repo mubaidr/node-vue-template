@@ -9,7 +9,7 @@
     "axios": "^0.18.1",
     "bootswatch": "^4.3.1",
     "es6-promise": "^4.2.6",
-    "flatpickr": "^4.5.7",
+    "flatpickr": "^4.6.1",
     "sweetalert": "^2.1.2",
     "vee-validate": "^2.2.9",
     "vue": "^2.6.10",
