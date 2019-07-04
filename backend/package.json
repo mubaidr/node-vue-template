@@ -12,7 +12,8 @@
     "mssql": "^4.3.2",
     "sequelize": "^4.42.0",
     "tedious": "^3.0.1",
-    "validator": "^10.11.0"
+    "validator": "^10.11.0",
+    "snyk": "^1.189.0"
   },
   "description": "Backend for node-vue-template",
   "devDependencies": {
@@ -42,7 +43,10 @@
     "dev": "nodemon ./bin/www --config nodemon.json",
     "generate-models": "node ./db/generate-models",
     "lint": "eslint --fix ./",
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "snyk": true
 }
