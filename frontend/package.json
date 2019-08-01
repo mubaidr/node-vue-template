@@ -14,7 +14,7 @@
     "vee-validate": "^2.2.11",
     "vue": "^2.6.10",
     "vue-flatpickr-component": "^8.1.2",
-    "vue-router": "^3.0.6",
+    "vue-router": "^3.0.7",
     "vuex": "^3.1.1",
     "snyk": "^1.186.0"
   },
