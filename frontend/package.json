@@ -11,7 +11,7 @@
     "es6-promise": "^4.2.8",
     "flatpickr": "^4.6.1",
     "sweetalert": "^2.1.2",
-    "vee-validate": "^2.2.11",
+    "vee-validate": "^2.2.13",
     "vue": "^2.6.10",
     "vue-flatpickr-component": "^8.1.2",
     "vue-router": "^3.0.7",
