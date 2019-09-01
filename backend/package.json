@@ -11,7 +11,7 @@
     "morgan": "~1.9.1",
     "mssql": "^4.3.2",
     "sequelize": "^4.42.0",
-    "tedious": "^3.0.1",
+    "tedious": "^6.3.0",
     "validator": "^10.11.0"
   },
   "description": "Backend for node-vue-template",
