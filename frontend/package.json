@@ -6,7 +6,7 @@
     "not ie <= 8"
   ],
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.19.0",
     "bootswatch": "^4.3.1",
     "es6-promise": "^4.2.8",
     "flatpickr": "^4.6.3",
